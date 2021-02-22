@@ -19,49 +19,56 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_background" translatesAutoresizingMaskIntoConstraints="NO" id="bVQ-Hh-1Bx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_kronon_image" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-ds-ub3">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="2KX-AB-c2o"/>
-                                    <constraint firstAttribute="width" constant="250" id="Btu-Wo-F7T"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="〜くろのん〜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-ff-BsN">
-                                <rect key="frame" x="110" y="259" width="194" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <rect key="frame" x="110" y="246.5" width="194" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予定管理システム" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqM-y7-wq9">
-                                <rect key="frame" x="125" y="206" width="164" height="24"/>
+                                <rect key="frame" x="125" y="200" width="164" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D53-Fr-D3Z">
-                                <rect key="frame" x="107" y="613" width="200" height="70"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D53-Fr-D3Z">
+                                <rect key="frame" x="107" y="594" width="200" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="DEw-09-sxq"/>
                                     <constraint firstAttribute="width" constant="200" id="wiy-ze-NCI"/>
                                 </constraints>
                                 <state key="normal" image="top_button"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_kronon_image" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-ds-ub3">
+                                <rect key="frame" x="83" y="313.5" width="248" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタート" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muT-EY-VaB">
+                                <rect key="frame" x="158.5" y="594" width="77.5" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yVY-ff-BsN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-170" id="6A2-Gb-AQc"/>
                             <constraint firstItem="bVQ-Hh-1Bx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7O3-75-m73"/>
+                            <constraint firstItem="2nI-ds-ub3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="C9b-90-xts"/>
+                            <constraint firstItem="muT-EY-VaB" firstAttribute="top" secondItem="D53-Fr-D3Z" secondAttribute="top" id="G1t-av-rEN"/>
                             <constraint firstItem="2nI-ds-ub3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAI-n7-HxH"/>
+                            <constraint firstItem="D53-Fr-D3Z" firstAttribute="top" secondItem="2nI-ds-ub3" secondAttribute="bottom" multiplier="1.02" id="Owv-fE-x8P"/>
                             <constraint firstItem="bVQ-Hh-1Bx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rhr-JN-4M7"/>
-                            <constraint firstItem="nqM-y7-wq9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-230" id="Uze-7j-g39"/>
-                            <constraint firstItem="D53-Fr-D3Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="YDY-Of-9i5"/>
+                            <constraint firstItem="muT-EY-VaB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-10" id="Ymx-rz-y2d"/>
+                            <constraint firstItem="yVY-ff-BsN" firstAttribute="top" secondItem="nqM-y7-wq9" secondAttribute="bottom" multiplier="1.1" id="cqJ-5y-bCT"/>
                             <constraint firstItem="yVY-ff-BsN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dU6-Oe-7ot"/>
                             <constraint firstItem="nqM-y7-wq9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="df2-4b-TgG"/>
                             <constraint firstItem="2nI-ds-ub3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dyR-Id-PtT"/>
                             <constraint firstItem="bVQ-Hh-1Bx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="e7M-MM-fKr"/>
                             <constraint firstItem="bVQ-Hh-1Bx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oHp-W0-bvg"/>
+                            <constraint firstItem="2nI-ds-ub3" firstAttribute="top" secondItem="yVY-ff-BsN" secondAttribute="bottom" multiplier="1.1" id="ofS-bs-Wsz"/>
                             <constraint firstItem="D53-Fr-D3Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r7Y-Pc-nSq"/>
+                            <constraint firstItem="2nI-ds-ub3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="ssU-N8-kot"/>
+                            <constraint firstItem="D53-Fr-D3Z" firstAttribute="bottom" secondItem="muT-EY-VaB" secondAttribute="bottom" constant="3" id="uwN-lx-AUR"/>
                         </constraints>
                     </view>
                 </viewController>
