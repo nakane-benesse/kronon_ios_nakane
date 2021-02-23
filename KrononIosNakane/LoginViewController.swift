@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +15,15 @@ class LoginViewController: UIViewController {
         //これがないと角丸にならない
         inputEmail.layer.masksToBounds = true
         inputEmail.layer.cornerRadius = 20.0
+        
         inputPassword.layer.masksToBounds = true
         inputPassword.layer.cornerRadius = 20.0
+        
         loginButton.layer.masksToBounds = true
         loginButton.layer.cornerRadius = 20.0
+        
+        inputEmail.delegate = self
+        inputPassword.delegate = self
     }
     
 
@@ -33,13 +38,16 @@ class LoginViewController: UIViewController {
     */
     
     @IBOutlet weak var inputEmail: UITextField!
-    
- 
     @IBOutlet weak var inputPassword: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
     
-    
     @IBAction func loginAction(_ sender: Any) {
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //returnを押したらキーボードを閉じるように
+        textField.resignFirstResponder()
+        
+        return true
     }
 }
