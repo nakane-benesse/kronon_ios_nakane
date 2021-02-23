@@ -12,13 +12,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let placeholderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         
         //これがないと角丸にならない
         inputEmail.layer.masksToBounds = true
         inputEmail.layer.cornerRadius = 20.0
+        inputEmail.attributedPlaceholder = NSAttributedString(string: "メールアドレス", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         
         inputPassword.layer.masksToBounds = true
         inputPassword.layer.cornerRadius = 20.0
+        inputPassword.attributedPlaceholder = NSAttributedString(string: "パスワード", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         
         loginButton.layer.masksToBounds = true
         loginButton.layer.cornerRadius = 20.0
