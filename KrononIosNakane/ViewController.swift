@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func startButtonAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showLoginView", sender: nil)
+    }
+    
 }
 
