@@ -127,7 +127,7 @@
                                     <action selector="loginAction:" destination="opY-tg-sK2" eventType="touchUpInside" id="a4Z-Ox-Ey0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hj-NK-PRE">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hj-NK-PRE">
                                 <rect key="frame" x="40" y="488" width="334" height="40"/>
                                 <color key="backgroundColor" red="0.52450501920000003" green="0.61083370449999996" blue="0.42349791530000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>

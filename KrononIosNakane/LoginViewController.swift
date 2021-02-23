@@ -8,10 +8,10 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let placeholderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
         
         //これがないと角丸にならない
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         inputEmail.delegate = self
         inputPassword.delegate = self
     }
-
+    
     
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
@@ -61,6 +61,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
-
+    
+    
 }
