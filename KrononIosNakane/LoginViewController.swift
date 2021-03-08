@@ -12,20 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let placeholderColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)
-        
-        //これがないと角丸にならない
-        inputEmail.layer.masksToBounds = true
-        inputEmail.layer.cornerRadius = 20.0
-        inputEmail.attributedPlaceholder = NSAttributedString(string: "メールアドレス", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
-        
-        inputPassword.layer.masksToBounds = true
-        inputPassword.layer.cornerRadius = 20.0
-        inputPassword.attributedPlaceholder = NSAttributedString(string: "パスワード", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
-        
-        loginButton.layer.masksToBounds = true
-        loginButton.layer.cornerRadius = 20.0
-        
+
         // UITextFieldの左右に余白を入れる
         //UITextFieldクラスを継承した独自のクラスを作るのが本当は丸そうだが、よく分からないので一旦個別に指定してみる
         let paddingView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 0.0))
@@ -60,6 +47,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    //private, protected, publicは意識しょう
+    private func viewSetUp(){
+        
+    }
+    
+    //メソッドの中でやる処理は１つが良い
+    //メソッドにわけよう
+    private func uiTextFieldRound(){
+        
+    }
+    
+    
     
     
     
