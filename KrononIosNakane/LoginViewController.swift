@@ -12,6 +12,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         inputEmail.delegate = self
         inputPassword.delegate = self
     }
