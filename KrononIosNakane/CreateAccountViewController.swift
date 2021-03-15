@@ -42,6 +42,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
+        self.parent?.navigationItem.hidesBackButton = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -59,6 +60,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputPassword2: MyTextField!
     
     @IBAction func createAccountAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "tabBarShow", sender: nil)
     }
     
     @IBAction func loginAction(_ sender: Any) {

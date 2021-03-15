@@ -231,6 +231,7 @@
                         <outlet property="inputPassword" destination="9Hj-NK-PRE" id="cc1-xM-T4H"/>
                         <outlet property="loginButton" destination="i2D-sL-jtQ" id="YZ6-3A-dgx"/>
                         <segue destination="04o-pe-eVb" kind="show" identifier="showCreateAccountView" id="qk8-nW-YLp"/>
+                        <segue destination="ORx-NI-zd1" kind="show" identifier="tabBarShow" id="wwM-GU-heo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhS-8o-Jpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -242,7 +243,7 @@
             <objects>
                 <viewController id="04o-pe-eVb" customClass="CreateAccountViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dL1-c3-P41">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-VD-KCf" customClass="MyTextField" customModule="KrononIosNakane" customModuleProvider="target">
@@ -356,7 +357,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createAccountAction:" destination="04o-pe-eVb" eventType="touchUpInside" id="HOJ-By-Jga"/>
+                                    <action selector="createAccountAction:" destination="04o-pe-eVb" eventType="touchUpInside" id="Sif-3E-LcS"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcn-C0-gfE">
@@ -447,11 +448,61 @@
                         <outlet property="inputPassword1" destination="Qxd-ED-NO6" id="Ml5-pe-3Rj"/>
                         <outlet property="inputPassword2" destination="HOh-kz-ga2" id="tQY-Ak-oJS"/>
                         <segue destination="opY-tg-sK2" kind="show" identifier="showLoginView" id="S7K-VJ-dUG"/>
+                        <segue destination="ORx-NI-zd1" kind="show" identifier="tabBarShow" id="wwI-J2-hsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACg-xy-1lh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2411.594202898551" y="87.723214285714278"/>
+        </scene>
+        <!--カレンダー-->
+        <scene sceneID="bXX-f9-Uby">
+            <objects>
+                <viewController id="Uoz-2X-VpG" customClass="CalendarViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6O5-hz-7IJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Guc-am-06F"/>
+                        <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="calendar_icon" id="0lV-Re-Pra"/>
+                    <navigationItem key="navigationItem" id="67B-tA-ghN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHV-3E-eab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="-613"/>
+        </scene>
+        <!--予定表-->
+        <scene sceneID="jef-ep-jGI">
+            <objects>
+                <viewController id="oVO-hx-Eun" customClass="ScheduleViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8G5-eX-wZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PBC-ot-TKZ"/>
+                        <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="予定表" image="schedule_icon" id="NfY-UE-mUg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lj3-DV-aaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4229" y="88"/>
+        </scene>
+        <!--アカウント-->
+        <scene sceneID="uvR-8S-OsI">
+            <objects>
+                <viewController id="Y62-SQ-dTj" customClass="AccountViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZFp-nR-epY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SQg-b8-eGs"/>
+                        <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="アカウント" image="account_icon" id="Ndl-jh-4bE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-6O-2ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4229" y="831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fRM-IP-amf">
@@ -471,12 +522,37 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="73.660714285714278"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vze-kC-MhA">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ORx-NI-zd1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="U8l-s8-upR"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x3J-PM-3pL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.86680954690000001" green="0.61223298309999996" blue="0.31363877649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uoz-2X-VpG" kind="relationship" relationship="viewControllers" id="sc7-KG-qhn"/>
+                        <segue destination="oVO-hx-Eun" kind="relationship" relationship="viewControllers" id="s99-ID-37R"/>
+                        <segue destination="Y62-SQ-dTj" kind="relationship" relationship="viewControllers" id="6ca-9f-qhe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTG-if-49J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3298.5507246376815" y="87.723214285714278"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="wwI-J2-hsc"/>
         <segue reference="S7K-VJ-dUG"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="account_icon" width="26" height="26"/>
+        <image name="calendar_icon" width="23" height="26"/>
         <image name="login_star_image" width="189.5" height="194.5"/>
+        <image name="schedule_icon" width="26" height="26"/>
         <image name="top_background" width="375.5" height="810.5"/>
         <image name="top_button" width="281" height="101"/>
         <image name="top_kronon_image" width="593" height="502.5"/>
