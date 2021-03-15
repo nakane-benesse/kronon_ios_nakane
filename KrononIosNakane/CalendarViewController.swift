@@ -8,17 +8,17 @@
 import UIKit
 
 class CalendarViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //ここに書いても反映されない（ライフサイクル）
         //NavigationBarのtitleとその色とフォント
-//        navigationItem.title = "カレンダー"
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20.0)]
-//
-//        //一部NavigationBarがすりガラス？のような感じになるのでfalseを指定
-//        self.navigationController?.navigationBar.isTranslucent = false
+        //        navigationItem.title = "カレンダー"
+        //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20.0)]
+        //
+        //        //一部NavigationBarがすりガラス？のような感じになるのでfalseを指定
+        //        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     
@@ -41,7 +41,7 @@ class CalendarViewController: UIViewController {
         
         super.viewWillAppear(animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         //self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.parent?.navigationItem.rightBarButtonItem = nil
@@ -49,13 +49,13 @@ class CalendarViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +19,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
         
         //NavigationBarの色
         //self.navigationController?.navigationBar.barTintColor = UIColor.black
-
+        
         //一部NavigationBarがすりガラス？のような感じになるのでfalseを指定
         self.navigationController?.navigationBar.isTranslucent = false
         
@@ -37,7 +37,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
         inputPassword1.delegate = self
         inputPassword2.delegate = self
         
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +50,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
         textField.resignFirstResponder()
         return true
     }
-
+    
     @IBOutlet weak var inputName: MyTextField!
     
     @IBOutlet weak var inputMail: MyTextField!
@@ -69,13 +69,13 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
