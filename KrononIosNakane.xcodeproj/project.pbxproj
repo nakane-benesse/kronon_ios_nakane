@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F70272125F69F05001002F6 /* UIButton+ibinspectable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */; };
 		4F70272425F6A2CB001002F6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272325F6A2CB001002F6 /* MyTextField.swift */; };
+		4F70272A25F84051001002F6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272925F84051001002F6 /* CreateAccountViewController.swift */; };
 		4FDFAA9D25E399A2007AD04B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAA9C25E399A2007AD04B /* AppDelegate.swift */; };
 		4FDFAA9F25E399A2007AD04B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAA9E25E399A2007AD04B /* SceneDelegate.swift */; };
 		4FDFAAA125E399A2007AD04B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAAA025E399A2007AD04B /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ibinspectable.swift.swift"; sourceTree = "<group>"; };
 		4F70272325F6A2CB001002F6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		4F70272925F84051001002F6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		4FDFAA9925E399A2007AD04B /* KrononIosNakane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrononIosNakane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDFAA9C25E399A2007AD04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FDFAA9E25E399A2007AD04B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				4FDFAAD925E8DBBF007AD04B /* UIView+ibinspectable.swift */,
 				4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */,
 				4FDFAAD525E5287F007AD04B /* LoginViewController.swift */,
+				4F70272925F84051001002F6 /* CreateAccountViewController.swift */,
 				4F70272325F6A2CB001002F6 /* MyTextField.swift */,
 				4FDFAAA525E399A5007AD04B /* Assets.xcassets */,
 				4FDFAAA725E399A5007AD04B /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				4FDFAAA125E399A2007AD04B /* ViewController.swift in Sources */,
 				4F70272125F69F05001002F6 /* UIButton+ibinspectable.swift.swift in Sources */,
 				4F70272425F6A2CB001002F6 /* MyTextField.swift in Sources */,
+				4F70272A25F84051001002F6 /* CreateAccountViewController.swift in Sources */,
 				4FDFAA9D25E399A2007AD04B /* AppDelegate.swift in Sources */,
 				4FDFAADA25E8DBBF007AD04B /* UIView+ibinspectable.swift in Sources */,
 				4FDFAA9F25E399A2007AD04B /* SceneDelegate.swift in Sources */,

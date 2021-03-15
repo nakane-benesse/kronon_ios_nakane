@@ -12,19 +12,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        
         inputEmail.delegate = self
         inputPassword.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showCreateAccountView", sender: nil)
     }
+    
+    @IBAction func createAccountAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "showCreateAccountView", sender: nil)
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //returnを押したらキーボードを閉じるように
