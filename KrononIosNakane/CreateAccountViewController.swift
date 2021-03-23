@@ -45,6 +45,14 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
         self.parent?.navigationItem.hidesBackButton = false
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        //キーボードのデフォルトを設定したいのに変わらないよ
+//        inputName.keyboardType = .default
+//        inputMail.keyboardType = .emailAddress
+//        inputPassword1.keyboardType = .emailAddress
+//        inputPassword2.keyboardType = .emailAddress
+//    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //returnを押したらキーボードを閉じるように
         textField.resignFirstResponder()
@@ -52,11 +60,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBOutlet weak var inputName: MyTextField!
-    
     @IBOutlet weak var inputMail: MyTextField!
-    
     @IBOutlet weak var inputPassword1: MyTextField!
-    
     @IBOutlet weak var inputPassword2: MyTextField!
     
     @IBAction func createAccountAction(_ sender: Any) {

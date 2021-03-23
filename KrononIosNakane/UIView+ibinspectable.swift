@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextField {
+extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -19,7 +19,7 @@ extension UITextField {
             layer.masksToBounds = newValue > 0
         }
     }
-    
+
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -29,7 +29,7 @@ extension UITextField {
             self.layer.borderWidth = newValue
         }
     }
-    
+
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -40,15 +40,6 @@ extension UITextField {
         }
     }
     
-    @IBInspectable
-    var placeHolderColor: UIColor? {
-        get {
-            return self.placeHolderColor
-        }
-        set {
-            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
-        }
-    }
     
 }
 

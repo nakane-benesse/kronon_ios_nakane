@@ -28,7 +28,29 @@ class CalendarViewController: UIViewController {
         self.parent?.navigationItem.title = "カレンダー"
         self.navigationController?.navigationBar.isTranslucent = false
         self.parent?.navigationItem.hidesBackButton = true
+                
+        super.viewWillAppear(animated)
         
+        print("calendar willappear")
+    }
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.parent?.navigationItem.rightBarButtonItem = nil
+        super.viewWillDisappear(animated)
+        
+        print("calendar willdisappear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        createButtonAdd()
+
+    }
+    
+    private func createButtonAdd(){
         //右上のボタン追加
         let button = UIButton(type: .system)
         button.semanticContentAttribute = .forceRightToLeft
@@ -38,24 +60,6 @@ class CalendarViewController: UIViewController {
         self.parent?.navigationItem.rightBarButtonItem = searchBarButtonItem
         //ボタンの色
         self.navigationController?.navigationBar.tintColor =  UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0)
-        
-        super.viewWillAppear(animated)
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.parent?.navigationItem.rightBarButtonItem = nil
-        super.viewWillDisappear(animated)
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

@@ -13,6 +13,7 @@
 		4FB9790225FFB006007B2F3F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9790125FFB006007B2F3F /* CalendarViewController.swift */; };
 		4FB9790525FFB013007B2F3F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9790425FFB013007B2F3F /* ScheduleViewController.swift */; };
 		4FB9790825FFB020007B2F3F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9790725FFB020007B2F3F /* AccountViewController.swift */; };
+		4FB9790F26001B59007B2F3F /* UITextView+ibinspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9790E26001B59007B2F3F /* UITextView+ibinspectable.swift */; };
 		4FDFAA9D25E399A2007AD04B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAA9C25E399A2007AD04B /* AppDelegate.swift */; };
 		4FDFAA9F25E399A2007AD04B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAA9E25E399A2007AD04B /* SceneDelegate.swift */; };
 		4FDFAAA125E399A2007AD04B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAAA025E399A2007AD04B /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		4FB9790125FFB006007B2F3F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4FB9790425FFB013007B2F3F /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		4FB9790725FFB020007B2F3F /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4FB9790E26001B59007B2F3F /* UITextView+ibinspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+ibinspectable.swift"; sourceTree = "<group>"; };
 		4FDFAA9925E399A2007AD04B /* KrononIosNakane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrononIosNakane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDFAA9C25E399A2007AD04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FDFAA9E25E399A2007AD04B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				4FB9790425FFB013007B2F3F /* ScheduleViewController.swift */,
 				4FB9790725FFB020007B2F3F /* AccountViewController.swift */,
 				4FDFAAD925E8DBBF007AD04B /* UIView+ibinspectable.swift */,
+				4FB9790E26001B59007B2F3F /* UITextView+ibinspectable.swift */,
 				4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */,
 				4FDFAAD525E5287F007AD04B /* LoginViewController.swift */,
 				4F70272925F84051001002F6 /* CreateAccountViewController.swift */,
@@ -172,6 +175,7 @@
 				4FDFAADA25E8DBBF007AD04B /* UIView+ibinspectable.swift in Sources */,
 				4FDFAA9F25E399A2007AD04B /* SceneDelegate.swift in Sources */,
 				4FB9790825FFB020007B2F3F /* AccountViewController.swift in Sources */,
+				4FB9790F26001B59007B2F3F /* UITextView+ibinspectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
