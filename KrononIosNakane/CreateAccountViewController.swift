@@ -65,11 +65,11 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputPassword2: MyTextField!
     
     @IBAction func createAccountAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "tabBarShow", sender: nil)
+        self.performSegue(withIdentifier: "goTabBar", sender: nil)
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "showLoginView", sender: nil)
+        self.performSegue(withIdentifier: "goLoginView", sender: nil)
     }
     
     

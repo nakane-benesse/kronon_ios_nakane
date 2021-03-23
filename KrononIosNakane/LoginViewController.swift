@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "tabBarShow", sender: nil)
+        self.performSegue(withIdentifier: "goTabBar", sender: nil)
     }
     
     @IBAction func createAccountAction(_ sender: Any) {

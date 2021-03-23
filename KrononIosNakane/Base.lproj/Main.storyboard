@@ -76,7 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Hbn-0b-w8A"/>
                     <connections>
-                        <segue destination="opY-tg-sK2" kind="show" identifier="showLoginView" id="6yp-C2-Gdx"/>
+                        <segue destination="opY-tg-sK2" kind="show" identifier="goLoginView" id="6yp-C2-Gdx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,7 +231,7 @@
                         <outlet property="inputPassword" destination="9Hj-NK-PRE" id="cc1-xM-T4H"/>
                         <outlet property="loginButton" destination="i2D-sL-jtQ" id="YZ6-3A-dgx"/>
                         <segue destination="04o-pe-eVb" kind="show" identifier="showCreateAccountView" id="qk8-nW-YLp"/>
-                        <segue destination="ORx-NI-zd1" kind="show" identifier="tabBarShow" id="wwM-GU-heo"/>
+                        <segue destination="ORx-NI-zd1" kind="show" identifier="goTabBar" id="wwM-GU-heo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhS-8o-Jpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,7 +243,7 @@
             <objects>
                 <viewController id="04o-pe-eVb" customClass="CreateAccountViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dL1-c3-P41">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-VD-KCf" customClass="MyTextField" customModule="KrononIosNakane" customModuleProvider="target">
@@ -447,8 +447,8 @@
                         <outlet property="inputName" destination="RO2-qD-HTF" id="kHy-w0-FaI"/>
                         <outlet property="inputPassword1" destination="Qxd-ED-NO6" id="Ml5-pe-3Rj"/>
                         <outlet property="inputPassword2" destination="HOh-kz-ga2" id="tQY-Ak-oJS"/>
-                        <segue destination="opY-tg-sK2" kind="show" identifier="showLoginView" id="S7K-VJ-dUG"/>
-                        <segue destination="ORx-NI-zd1" kind="show" identifier="tabBarShow" id="wwI-J2-hsc"/>
+                        <segue destination="opY-tg-sK2" kind="show" identifier="goLoginView" id="S7K-VJ-dUG"/>
+                        <segue destination="ORx-NI-zd1" kind="show" identifier="goTabBar" id="wwI-J2-hsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACg-xy-1lh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -489,7 +489,7 @@
                                             <constraint firstAttribute="width" constant="200" id="Cme-Yc-1eu"/>
                                             <constraint firstAttribute="height" constant="30" id="wdS-HX-pRh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -583,10 +583,77 @@
                     <view key="view" contentMode="scaleToFill" id="ZFp-nR-epY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_page_icon" translatesAutoresizingMaskIntoConstraints="NO" id="bg2-6M-zu0">
+                                <rect key="frame" x="0.0" y="60" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="1iC-Re-ESR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中根" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPW-kH-CVy">
+                                <rect key="frame" x="0.0" y="200" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4n5-I3-LZv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nakane@mail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-GW-qQi">
+                                <rect key="frame" x="0.0" y="240" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ee9-Tz-Ucy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uea-Qz-BX3">
+                                <rect key="frame" x="132" y="310" width="150" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Cb-wk-Hxt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="O5p-h6-ijj"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutAction:" destination="Y62-SQ-dTj" eventType="touchUpInside" id="eLk-ya-Tmw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SQg-b8-eGs"/>
                         <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SQg-b8-eGs" firstAttribute="trailing" secondItem="Urw-GW-qQi" secondAttribute="trailing" id="0vZ-0o-FLh"/>
+                            <constraint firstItem="fPW-kH-CVy" firstAttribute="top" secondItem="bg2-6M-zu0" secondAttribute="bottom" constant="20" id="7vn-E3-vhB"/>
+                            <constraint firstItem="bg2-6M-zu0" firstAttribute="leading" secondItem="SQg-b8-eGs" secondAttribute="leading" id="Cz1-bK-gKu"/>
+                            <constraint firstItem="uea-Qz-BX3" firstAttribute="centerX" secondItem="ZFp-nR-epY" secondAttribute="centerX" id="Fba-7M-G3D"/>
+                            <constraint firstItem="SQg-b8-eGs" firstAttribute="trailing" secondItem="fPW-kH-CVy" secondAttribute="trailing" id="LHn-Ty-rhU"/>
+                            <constraint firstItem="Urw-GW-qQi" firstAttribute="leading" secondItem="SQg-b8-eGs" secondAttribute="leading" id="Ylm-xv-9g4"/>
+                            <constraint firstItem="uea-Qz-BX3" firstAttribute="top" secondItem="Urw-GW-qQi" secondAttribute="bottom" constant="40" id="gVk-ds-tSW"/>
+                            <constraint firstItem="bg2-6M-zu0" firstAttribute="top" secondItem="SQg-b8-eGs" secondAttribute="top" constant="60" id="oab-pW-DOF"/>
+                            <constraint firstItem="Urw-GW-qQi" firstAttribute="top" secondItem="fPW-kH-CVy" secondAttribute="bottom" constant="10" id="wLA-ww-5pm"/>
+                            <constraint firstItem="SQg-b8-eGs" firstAttribute="trailing" secondItem="bg2-6M-zu0" secondAttribute="trailing" id="zan-fz-Lw1"/>
+                            <constraint firstItem="fPW-kH-CVy" firstAttribute="leading" secondItem="SQg-b8-eGs" secondAttribute="leading" id="znh-nT-D6U"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="アカウント" image="account_icon" id="Ndl-jh-4bE"/>
+                    <connections>
+                        <segue destination="opY-tg-sK2" kind="show" identifier="goLoginView" id="tiB-nr-XXR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-6O-2ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -639,6 +706,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="account_icon" width="26" height="26"/>
+        <image name="account_page_icon" width="101.5" height="101.5"/>
         <image name="calendar_icon" width="23" height="26"/>
         <image name="left_button" width="19" height="34"/>
         <image name="login_star_image" width="189.5" height="194.5"/>

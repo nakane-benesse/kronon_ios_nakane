@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startButtonAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "showLoginView", sender: nil)
+        self.performSegue(withIdentifier: "goLoginView", sender: nil)
     }
     
 }
