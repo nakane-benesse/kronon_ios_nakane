@@ -243,7 +243,7 @@
             <objects>
                 <viewController id="04o-pe-eVb" customClass="CreateAccountViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dL1-c3-P41">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-VD-KCf" customClass="MyTextField" customModule="KrononIosNakane" customModuleProvider="target">
@@ -467,6 +467,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="カレンダー" image="calendar_icon" id="0lV-Re-Pra"/>
                     <navigationItem key="navigationItem" id="67B-tA-ghN"/>
+                    <connections>
+                        <segue destination="mYR-7q-f0o" kind="show" identifier="goCreateScheduleView" id="t8d-FM-9Gc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHV-3E-eab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -570,11 +573,44 @@
                     <connections>
                         <outlet property="blackboardView" destination="Lfl-IP-nxJ" id="WOo-Be-6bf"/>
                         <outlet property="scrollView" destination="HvF-6t-4vM" id="WEA-2O-uH9"/>
+                        <segue destination="mYR-7q-f0o" kind="show" identifier="goCreateScheduleView" id="qcA-Mb-TMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj3-DV-aaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4228.985507246377" y="87.723214285714278"/>
+        </scene>
+        <!--Create Schedule View Controller-->
+        <scene sceneID="Nun-yM-fXu">
+            <objects>
+                <viewController id="mYR-7q-f0o" customClass="CreateScheduleViewController" customModule="KrononIosNakane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KB0-Q7-C7X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enf-hI-CXT">
+                                <rect key="frame" x="40" y="40" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PTt-op-Ybm"/>
+                                </constraints>
+                                <color key="textColor" red="0.22732341289999999" green="0.2236859202" blue="0.2156850696" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="al3-jg-p1a"/>
+                        <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="enf-hI-CXT" firstAttribute="top" secondItem="al3-jg-p1a" secondAttribute="top" constant="40" id="Rwf-dX-6sC"/>
+                            <constraint firstItem="al3-jg-p1a" firstAttribute="trailing" secondItem="enf-hI-CXT" secondAttribute="trailing" constant="40" id="ljO-O0-Y8Y"/>
+                            <constraint firstItem="enf-hI-CXT" firstAttribute="leading" secondItem="al3-jg-p1a" secondAttribute="leading" constant="40" id="zBa-Lr-Vk5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="39W-bg-LrM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9K-KI-bg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5230" y="113"/>
         </scene>
         <!--アカウント-->
         <scene sceneID="uvR-8S-OsI">
@@ -702,6 +738,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wwI-J2-hsc"/>
+        <segue reference="t8d-FM-9Gc"/>
         <segue reference="S7K-VJ-dUG"/>
     </inferredMetricsTieBreakers>
     <resources>

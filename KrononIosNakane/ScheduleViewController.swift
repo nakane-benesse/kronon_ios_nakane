@@ -41,7 +41,6 @@ class ScheduleViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.parent?.navigationItem.hidesBackButton = true
         
-        
         super.viewWillAppear(animated)
         
         print("schedule willappear")
@@ -65,7 +64,7 @@ class ScheduleViewController: UIViewController {
         //self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.parent?.navigationItem.rightBarButtonItem = nil
         super.viewWillDisappear(animated)
-        
+
         print("schedule willdisappear")
     }
     
@@ -82,10 +81,20 @@ class ScheduleViewController: UIViewController {
         button.semanticContentAttribute = .forceRightToLeft
         //button.setTitle("検索", for: .normal
         button.setImage(UIImage(named: "create_schedule_icon")!, for: .normal)
+        
+        // タップされたときのaction
+        button.addTarget(self, action: #selector(createScheduleButtonTapped(_:)), for: .touchUpInside)
+        
         let searchBarButtonItem = UIBarButtonItem(customView: button)
         self.parent?.navigationItem.rightBarButtonItem = searchBarButtonItem
         //ボタンの色
         self.navigationController?.navigationBar.tintColor =  UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0)
+        
+        
+    }
+    
+    @objc func createScheduleButtonTapped(_ sender : Any) {
+        self.performSegue(withIdentifier: "goCreateScheduleView", sender: nil)
     }
     
     private func timeAdd(parentView : UIView){
