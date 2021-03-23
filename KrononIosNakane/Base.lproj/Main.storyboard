@@ -462,15 +462,36 @@
                     <view key="view" contentMode="scaleToFill" id="6O5-hz-7IJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-El-M45" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="20" width="374" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="YYYY年MM月"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Guc-am-06F"/>
                         <color key="backgroundColor" red="0.99160808320000005" green="0.96918076279999998" blue="0.94117218260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Guc-am-06F" firstAttribute="bottom" secondItem="hPh-El-M45" secondAttribute="bottom" constant="20" id="3jY-fX-Dzm"/>
+                            <constraint firstItem="Guc-am-06F" firstAttribute="trailing" secondItem="hPh-El-M45" secondAttribute="trailing" constant="20" id="5EP-c3-vES"/>
+                            <constraint firstItem="hPh-El-M45" firstAttribute="leading" secondItem="Guc-am-06F" secondAttribute="leading" constant="20" id="NDy-Fz-tUr"/>
+                            <constraint firstItem="hPh-El-M45" firstAttribute="top" secondItem="Guc-am-06F" secondAttribute="top" constant="20" id="vO8-Zt-xr4"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="カレンダー" image="calendar_icon" id="0lV-Re-Pra"/>
                     <navigationItem key="navigationItem" id="67B-tA-ghN"/>
+                    <connections>
+                        <outlet property="calendar" destination="hPh-El-M45" id="18P-De-Nwo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHV-3E-eab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4206" y="-613"/>
+            <point key="canvasLocation" x="4205.7971014492759" y="-613.39285714285711"/>
         </scene>
         <!--予定表-->
         <scene sceneID="jef-ep-jGI">

@@ -22,9 +22,12 @@
 		4FDFAAA925E399A5007AD04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDFAAA725E399A5007AD04B /* LaunchScreen.storyboard */; };
 		4FDFAAD625E52880007AD04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAAD525E5287F007AD04B /* LoginViewController.swift */; };
 		4FDFAADA25E8DBBF007AD04B /* UIView+ibinspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFAAD925E8DBBF007AD04B /* UIView+ibinspectable.swift */; };
+		89E3486E1266FE623C299DF4 /* Pods_KrononIosNakane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0966005821A1371462C2AA89 /* Pods_KrononIosNakane.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0966005821A1371462C2AA89 /* Pods_KrononIosNakane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KrononIosNakane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		391596FB2882EE78C7EA57DA /* Pods-KrononIosNakane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KrononIosNakane.debug.xcconfig"; path = "Target Support Files/Pods-KrononIosNakane/Pods-KrononIosNakane.debug.xcconfig"; sourceTree = "<group>"; };
 		4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ibinspectable.swift.swift"; sourceTree = "<group>"; };
 		4F70272325F6A2CB001002F6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		4F70272925F84051001002F6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		4FDFAAAA25E399A5007AD04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FDFAAD525E5287F007AD04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FDFAAD925E8DBBF007AD04B /* UIView+ibinspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ibinspectable.swift"; sourceTree = "<group>"; };
+		CDD494344148EB689C549E77 /* Pods-KrononIosNakane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KrononIosNakane.release.xcconfig"; path = "Target Support Files/Pods-KrononIosNakane/Pods-KrononIosNakane.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E3486E1266FE623C299DF4 /* Pods_KrononIosNakane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2092D0F95348674F8F90478F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0966005821A1371462C2AA89 /* Pods_KrononIosNakane.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4FDFAA9025E399A2007AD04B = {
 			isa = PBXGroup;
 			children = (
 				4FDFAA9B25E399A2007AD04B /* KrononIosNakane */,
 				4FDFAA9A25E399A2007AD04B /* Products */,
+				F9DE76DB6D478FA878299090 /* Pods */,
+				2092D0F95348674F8F90478F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +109,16 @@
 			path = KrononIosNakane;
 			sourceTree = "<group>";
 		};
+		F9DE76DB6D478FA878299090 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				391596FB2882EE78C7EA57DA /* Pods-KrononIosNakane.debug.xcconfig */,
+				CDD494344148EB689C549E77 /* Pods-KrononIosNakane.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FDFAAAD25E399A5007AD04B /* Build configuration list for PBXNativeTarget "KrononIosNakane" */;
 			buildPhases = (
+				36CC253DE1268CB278122463 /* [CP] Check Pods Manifest.lock */,
 				4FDFAA9525E399A2007AD04B /* Sources */,
 				4FDFAA9625E399A2007AD04B /* Frameworks */,
 				4FDFAA9725E399A2007AD04B /* Resources */,
+				B30FA307D6AF4E56A5C532C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +185,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36CC253DE1268CB278122463 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KrononIosNakane-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B30FA307D6AF4E56A5C532C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KrononIosNakane/Pods-KrononIosNakane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KrononIosNakane/Pods-KrononIosNakane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KrononIosNakane/Pods-KrononIosNakane-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4FDFAA9525E399A2007AD04B /* Sources */ = {
@@ -319,6 +388,7 @@
 		};
 		4FDFAAAE25E399A5007AD04B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 391596FB2882EE78C7EA57DA /* Pods-KrononIosNakane.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +408,7 @@
 		};
 		4FDFAAAF25E399A5007AD04B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDD494344148EB689C549E77 /* Pods-KrononIosNakane.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
