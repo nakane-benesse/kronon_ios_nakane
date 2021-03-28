@@ -18,13 +18,16 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     @IBOutlet weak var inputContent: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBAction func CreateScheduleAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "goTabBar", sender: nil)
+    }
+    
     @IBOutlet weak var scrollViewBottom: NSLayoutConstraint!
     
     //UIDatePickerを定義するための変数
     var datePicker: UIDatePicker = UIDatePicker()
-    
+    var timePicker: UIDatePicker = UIDatePicker()    
     var pickerView: UIPickerView = UIPickerView()
-    //let timeHourList = ["", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
     let placeList = ["オフィス", "在宅", "外出"]
     
     
@@ -35,6 +38,8 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20.0)]
         
         inputTitle.delegate = self
+        inputStartTime.delegate = self
+        inputEndTime.delegate = self
         inputPlace.delegate = self
         //inputContent.delegate = self
         scrollView.delegate = self
@@ -47,6 +52,11 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         
         //DatePicker設定
         setDatePicker()
+        
+        //時間のdatePickerの設定
+        setTimePicker()
+        setStartTimeField()
+        setEndTimeField()
         
         //場所
         placePullDownSet()
@@ -79,23 +89,101 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     // UIDatePickerのDoneを押したら発火
     @objc func datePickerDone() {
         inputDate.endEditing(true)
-        
         // 日付のフォーマット
         let formatter = DateFormatter()
-        
         //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
         formatter.dateFormat = "yyyy年MM月dd日"
-        
         //(from: datePicker.date))を指定してあげることで
         //datePickerで指定した日付が表示される
         inputDate.text = "\(formatter.string(from: datePicker.date))"
+    }
+    
+    //時間用のdatePickerの設定
+    private func setTimePicker(){
+        // ピッカー設定
+        timePicker.datePickerMode = UIDatePicker.Mode.time
+        timePicker.timeZone = NSTimeZone.local
+        timePicker.locale = Locale(identifier: "ja_JP") //Locale.current
+        timePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        timePicker.minuteInterval = 15
+        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat =  "HH:mm"
+//        let min = formatter.date(from: "8:00")      //createing min time
+//        let max = formatter.date(from: "20:00") //creating max time
+//        datePicker.minimumDate = min  //setting min time to picker
+//        datePicker.maximumDate = max  //setting max time to picker
+        //inputDate.inputView = datePicker
+        
+        //8:00-20:00の制約
+        // https://stackoverflow.com/questions/49520781/restricting-enabled-time-to-a-specific-time-span-in-uidatepicker-swift-4/49521457
+        let cal = Calendar.current
+        let now = Date()  // get the current date and time (2018-03-27 19:38:44)
+        let components = cal.dateComponents([.day, .month, .year], from: now)  // extract the date components 28, 3, 2018
+        let today = cal.date(from: components)!  // build another Date value just with date components, without the time (2018-03-27 00:00:00)
+        timePicker.minimumDate = today.addingTimeInterval(60 * 60 * 8)  // adds 9h
+        timePicker  .maximumDate = today.addingTimeInterval(60 * 60 * 20) // adds 21h
         
     }
+    
+    //開始時間fieldにpickerの指定
+    private func setStartTimeField(){
+        // 決定バーの生成
+        //let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.farame.size.width, height: 35))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        //let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.timePickerDone(textField:)))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.startTimePickerDone))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        inputStartTime.inputView = timePicker
+        inputStartTime.inputAccessoryView = toolbar
+    }
+    //pickerで指定した時間を、開始時間fieldに反映する
+    @objc func startTimePickerDone() {
+        inputStartTime.endEditing(true)
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+        formatter.dateFormat = "H:mm"
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        inputStartTime.text = "\(formatter.string(from: timePicker.date))"
+    }
+    
+    //終了時間fieldにpickerの指定
+    private func setEndTimeField(){
+        // 決定バーの生成
+        //let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.farame.size.width, height: 35))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        //let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.timePickerDone(textField:)))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.endTimePickerDone))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        inputEndTime.inputView = timePicker
+        inputEndTime.inputAccessoryView = toolbar
+    }
+    //pickerで指定した時間を、終了時間fieldに反映する
+    @objc func endTimePickerDone() {
+        inputEndTime.endEditing(true)
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+        formatter.dateFormat = "H:mm"
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        inputEndTime.text = "\(formatter.string(from: timePicker.date))"
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // https://qiita.com/naoki_koreeda/items/6f3057012b52979fcd9c
     //place list プルダウン
@@ -130,7 +218,6 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.inputPlace.text = placeList[row]
     }
-
 
     @objc func placePickerDone() {
         self.inputPlace.endEditing(true)
