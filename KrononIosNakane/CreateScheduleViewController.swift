@@ -61,7 +61,7 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         //場所
         placePullDownSet()
         
-
+        
     }
     
     
@@ -107,12 +107,12 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         timePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
         timePicker.minuteInterval = 15
         
-//        let formatter = DateFormatter()
-//        formatter.dateFormat =  "HH:mm"
-//        let min = formatter.date(from: "8:00")      //createing min time
-//        let max = formatter.date(from: "20:00") //creating max time
-//        datePicker.minimumDate = min  //setting min time to picker
-//        datePicker.maximumDate = max  //setting max time to picker
+        //        let formatter = DateFormatter()
+        //        formatter.dateFormat =  "HH:mm"
+        //        let min = formatter.date(from: "8:00")      //createing min time
+        //        let max = formatter.date(from: "20:00") //creating max time
+        //        datePicker.minimumDate = min  //setting min time to picker
+        //        datePicker.maximumDate = max  //setting max time to picker
         //inputDate.inputView = datePicker
         
         //8:00-20:00の制約
@@ -199,26 +199,26 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         //let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel))
         toolbar.setItems([spacelItem, doneItem], animated: true)
-
+        
         self.inputPlace.inputView = pickerView
         self.inputPlace.inputAccessoryView = toolbar
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return placeList.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return placeList[row]
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.inputPlace.text = placeList[row]
     }
-
+    
     @objc func placePickerDone() {
         self.inputPlace.endEditing(true)
     }
