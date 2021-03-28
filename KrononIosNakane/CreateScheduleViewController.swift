@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UIScrollViewDelegate{
+class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
     @IBOutlet weak var inputTitle: UITextField!
@@ -22,6 +22,10 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     
     //UIDatePickerを定義するための変数
     var datePicker: UIDatePicker = UIDatePicker()
+    
+    var pickerView: UIPickerView = UIPickerView()
+    //let timeHourList = ["", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    let placeList = ["オフィス", "在宅", "外出"]
     
     
     override func viewDidLoad() {
@@ -43,6 +47,9 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         
         //DatePicker設定
         setDatePicker()
+        
+        //場所
+        placePullDownSet()
         
 
     }
@@ -89,6 +96,46 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // https://qiita.com/naoki_koreeda/items/6f3057012b52979fcd9c
+    //place list プルダウン
+    private func placePullDownSet(){
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        //pickerView.showsSelectionIndicator = true
+        self.inputPlace.text = placeList[0]
+        
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.placePickerDone))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        //let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+
+        self.inputPlace.inputView = pickerView
+        self.inputPlace.inputAccessoryView = toolbar
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return placeList.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return placeList[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.inputPlace.text = placeList[row]
+    }
+
+
+    @objc func placePickerDone() {
+        self.inputPlace.endEditing(true)
+    }
+    //place list プルダウン ここまで
     
     
     private func setupNotifications() {
