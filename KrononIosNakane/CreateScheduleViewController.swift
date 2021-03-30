@@ -19,7 +19,14 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func CreateScheduleAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "goTabBar", sender: nil)
+        
+        createSchedule(title: inputTitle.text!,
+                       scheduleDate: inputDate.text!,
+                       place: CommonData.placeDictionary[inputPlace.text!] ?? 0,
+                       startTime: inputStartTime.text!,
+                       endTime: inputEndTime.text!,
+                       content: inputContent.text!)
+        //self.performSegue(withIdentifier: "goTabBar", sender: nil)
     }
     
     @IBOutlet weak var scrollViewBottom: NSLayoutConstraint!
@@ -92,7 +99,7 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         // 日付のフォーマット
         let formatter = DateFormatter()
         //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
-        formatter.dateFormat = "yyyy年MM月dd日"
+        formatter.dateFormat = CommonData.DISPLAY_DATE_FORMAT//"yyyy年MM月dd日"
         //(from: datePicker.date))を指定してあげることで
         //datePickerで指定した日付が表示される
         inputDate.text = "\(formatter.string(from: datePicker.date))"
@@ -146,7 +153,7 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         // 日付のフォーマット
         let formatter = DateFormatter()
         //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
-        formatter.dateFormat = "H:mm"
+        formatter.dateFormat = "HH:mm"
         //(from: datePicker.date))を指定してあげることで
         //datePickerで指定した日付が表示される
         inputStartTime.text = "\(formatter.string(from: timePicker.date))"
@@ -172,7 +179,7 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         // 日付のフォーマット
         let formatter = DateFormatter()
         //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
-        formatter.dateFormat = "H:mm"
+        formatter.dateFormat = "HH:mm"
         //(from: datePicker.date))を指定してあげることで
         //datePickerで指定した日付が表示される
         inputEndTime.text = "\(formatter.string(from: timePicker.date))"
@@ -267,6 +274,66 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         return true
     }
     
+    private func createSchedule(title:String, scheduleDate:String, place:Int, startTime:String, endTime:String, content:String){
+        guard let reqestUrl = URL(string: CommonData.IP_ADDRESS+"api/schedules") else{
+            return
+        }
+        
+        let token = UserDefaults.standard.string(forKey: "token")
+        if(token == nil){
+            DispatchQueue.main.async {
+                AlertDialog.alert(viewController:self, title:"認証エラー", message:"認証に失敗したよ。再度ログインしてね。")
+            }
+            return
+        }
+        
+        
+        let data: [String: Any] = ["title": title,
+                                   "schedule_date": CommonData.changeDateFormat(date: scheduleDate),
+                                   "place": place,
+                                   "start_time": startTime,
+                                   "end_time": endTime,
+                                   "content":content]
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: data, options: []) else { return }
+        
+        //リクエストに必要な情報を生成
+        var request = URLRequest(url: reqestUrl)
+        request.httpMethod = "POST"
+        
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer "+token!, forHTTPHeaderField: "Authorization")
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            
+            
+            if let error = error {
+                print("Failed to get item info: \(error)")
+                return;
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                
+                if(response.statusCode == 200){
+                    DispatchQueue.main.async {
+                        AlertDialog.createUserDialog(viewController: self, title: "登録が完了したよ。", message: "")
+                    }
+                    return
+                }else if(response.statusCode == 400){
+                    DispatchQueue.main.async {
+                        AlertDialog.alert(viewController:self, title:"入力エラー", message:"予定が被っているよ。")
+                    }
+                    return
+                }else{
+                    DispatchQueue.main.async {
+                        AlertDialog.alert(viewController:self, title:"予期せぬエラー", message:"問題が発生しちゃったよ。")
+                    }
+                    return
+                }
+            }
+        }.resume()
+    }
     
 }
 
@@ -283,3 +350,5 @@ extension UIViewController {
         self.view.endEditing(true)
     }
 }
+
+
