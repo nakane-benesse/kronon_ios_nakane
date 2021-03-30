@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F49139F26138F9E008B7D26 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F49139E26138F9E008B7D26 /* AlertDialog.swift */; };
+		4F4913A22613A2CD008B7D26 /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4913A12613A2CD008B7D26 /* CommonData.swift */; };
 		4F70272125F69F05001002F6 /* UIButton+ibinspectable.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */; };
 		4F70272425F6A2CB001002F6 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272325F6A2CB001002F6 /* MyTextField.swift */; };
 		4F70272A25F84051001002F6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F70272925F84051001002F6 /* CreateAccountViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F49139E26138F9E008B7D26 /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
+		4F4913A12613A2CD008B7D26 /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		4F70272025F69F05001002F6 /* UIButton+ibinspectable.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ibinspectable.swift.swift"; sourceTree = "<group>"; };
 		4F70272325F6A2CB001002F6 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		4F70272925F84051001002F6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				4FDFAA9C25E399A2007AD04B /* AppDelegate.swift */,
 				4FDFAA9E25E399A2007AD04B /* SceneDelegate.swift */,
 				4FDFAAA025E399A2007AD04B /* ViewController.swift */,
+				4F49139E26138F9E008B7D26 /* AlertDialog.swift */,
+				4F4913A12613A2CD008B7D26 /* CommonData.swift */,
 				4FDFAAA225E399A2007AD04B /* Main.storyboard */,
 				4FB9790125FFB006007B2F3F /* CalendarViewController.swift */,
 				4F9E27F62610FA9500ABD699 /* CalendarCollectionViewCell.swift */,
@@ -177,6 +183,7 @@
 				4FDFAAA125E399A2007AD04B /* ViewController.swift in Sources */,
 				4F70272125F69F05001002F6 /* UIButton+ibinspectable.swift.swift in Sources */,
 				4F70272425F6A2CB001002F6 /* MyTextField.swift in Sources */,
+				4F49139F26138F9E008B7D26 /* AlertDialog.swift in Sources */,
 				4F70272A25F84051001002F6 /* CreateAccountViewController.swift in Sources */,
 				4FB9790525FFB013007B2F3F /* ScheduleViewController.swift in Sources */,
 				4FDFAA9D25E399A2007AD04B /* AppDelegate.swift in Sources */,
@@ -185,6 +192,7 @@
 				4F9E27F72610FA9500ABD699 /* CalendarCollectionViewCell.swift in Sources */,
 				4FDFAADA25E8DBBF007AD04B /* UIView+ibinspectable.swift in Sources */,
 				4FDFAA9F25E399A2007AD04B /* SceneDelegate.swift in Sources */,
+				4F4913A22613A2CD008B7D26 /* CommonData.swift in Sources */,
 				4FB9790825FFB020007B2F3F /* AccountViewController.swift in Sources */,
 				4F9E27EE261057E300ABD699 /* CustomDatePicker.swift in Sources */,
 				4FB9790F26001B59007B2F3F /* UITextView+ibinspectable.swift in Sources */,
