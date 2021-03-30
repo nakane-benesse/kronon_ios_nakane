@@ -53,6 +53,11 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //テスト
+        let a = UserDefaults.standard.string(forKey: "email")
+        print(String(a!))
+        print("aaa")
+        
         //calendarCollectionView.dataSource = self
         //calendarCollectionView.register(UINib(nibName: "CalendarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CalendarCollectionViewCell")
         let date = Date()

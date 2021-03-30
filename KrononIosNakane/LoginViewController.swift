@@ -111,7 +111,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         let jsonData = try JSONSerialization.data(withJSONObject: jsonDict!["data"]!, options: .prettyPrinted)
                         
                         if let loginData = try? JSONDecoder().decode(LoginData.self, from: jsonData as Data) {
-                            print(loginData.email)
+                            UserDefaults.standard.set(loginData.email, forKey:"email")
+                            UserDefaults.standard.set(loginData.name, forKey:"name")
+                            UserDefaults.standard.set(loginData.token, forKey:"token")
+                            //print(loginData.email)
                         }
                     }
                     
