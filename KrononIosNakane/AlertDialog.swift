@@ -19,4 +19,22 @@ class AlertDialog{
         //実際に表示させる
         viewController.present(dialog, animated: true, completion: nil)
     }
+    
+    public static func createUserDialog(viewController:UIViewController, title:String, message:String){
+        //アラートのタイトル
+        let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //ボタンのタイトル
+        //dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+                viewController.performSegue(withIdentifier: "goTabBar", sender: nil)
+                print("OK")
+        })
+        dialog.addAction(defaultAction)
+        
+        //実際に表示させる
+        viewController.present(dialog, animated: true, completion: nil)
+    }
 }

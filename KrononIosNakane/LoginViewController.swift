@@ -10,22 +10,6 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //キーボードのデフォルトを設定したいのに変わらないよ
-        inputEmail.keyboardType = .emailAddress
-        inputPassword.keyboardType = .emailAddress
-        //入力内容を隠す
-        inputPassword.isSecureTextEntry = true
-        
-        inputEmail.delegate = self
-        inputPassword.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
     
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
@@ -48,6 +32,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //キーボードのデフォルトを設定したいのに変わらないよ
+        inputEmail.keyboardType = .emailAddress
+        inputPassword.keyboardType = .emailAddress
+        //入力内容を隠す
+        inputPassword.isSecureTextEntry = true
+        
+        inputEmail.delegate = self
+        inputPassword.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //returnを押したらキーボードを閉じるように
         textField.resignFirstResponder()
@@ -61,9 +64,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let authString = String(format: "%@:%@", email, password)
-        let authData = authString.data(using: String.Encoding.utf8)!
-        let authBase64 = authData.base64EncodedString()
         
         let data: [String: Any] = ["email": email, "password": password]
         guard let httpBody = try? JSONSerialization.data(withJSONObject: data, options: []) else { return }
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         request.httpMethod = "POST"
         
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Basic \(authBase64)", forHTTPHeaderField: "Authorization")
+        //request.setValue("Basic \(authBase64)", forHTTPHeaderField: "Authorization")
         request.httpBody = httpBody
         
         URLSession.shared.dataTask(with: request) {(data, response, error) in
