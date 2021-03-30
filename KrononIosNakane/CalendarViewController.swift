@@ -15,7 +15,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
     var numberOfItems: Int!
     var daysPerWeek: Int = 7
     var numberOfWeeks:Int = 6
-
+    
     var year: Int = 0
     var month: Int = 0
     var day: Int = 0
@@ -23,7 +23,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     var dates : [Date] = []//[Int] = [1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7]
     var schedules : [String] = []//["予定1111１","予定２","","予定４", "", "", "","予定１","予定２","","予定４", "", "", "","予定１","予定２","","予定４", "", "", "","予定１","予定２","","予定４", "", "", "","予定１","予定２","","予定４", "", "", ""]
-
+    
     let SATURDAY_COLOR = UIColor(red: 242/255, green: 246/255, blue: 253/255, alpha: 1.0)
     let SUNDAY_COLOR = UIColor(red: 253/255, green: 237/255, blue: 239/255, alpha: 1.0)
     
@@ -137,7 +137,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         default:
             cell.backgroundColor = UIColor.white
         }
-
+        
         
         let month = calendar.component(.month, from: dates[indexPath.item])
         let currentMonth = calendar.component(.month, from: currentDate)
@@ -241,7 +241,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         while counter < numberOfWeeks * 7 {
             schedules.append("予定")
             counter += 1
-
+            
         }
     }
     
