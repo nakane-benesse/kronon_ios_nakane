@@ -20,6 +20,10 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     
     @IBAction func CreateScheduleAction(_ sender: Any) {
         
+        if(!isCheckInput()){
+            return
+        }
+        
         createSchedule(title: inputTitle.text!,
                        scheduleDate: inputDate.text!,
                        place: CommonData.placeDictionary[inputPlace.text!] ?? 0,
@@ -271,6 +275,19 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //returnを押したらキーボードを閉じるように
         textField.resignFirstResponder()
+        return true
+    }
+    
+    private func isCheckInput()->Bool{
+        if(inputTitle.text!.isEmpty || inputDate.text!.isEmpty || inputStartTime.text!.isEmpty || inputEndTime.text!.isEmpty){
+            AlertDialog.alert(viewController:self, title:"入力エラー", message:"未入力の項目があるよ。")
+            return false
+        }
+        if(inputStartTime.text! >= inputEndTime.text!){
+            AlertDialog.alert(viewController:self, title:"入力エラー", message:"終了時間は開始時間よりも後の時間を指定してね。")
+            return false
+        }
+        
         return true
     }
     
