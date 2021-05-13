@@ -9,7 +9,7 @@ import Foundation
 
 class CommonData{
     
-    static let IP_ADDRESS = "http://52.197.190.20/"
+    static let IP_ADDRESS = "http://13.230.179.27/"
     static let DISPLAY_DATE_FORMAT = "yyyy年MM月dd日"
     static let API_DATE_FORMAT = "yyyy-MM-dd"
 
