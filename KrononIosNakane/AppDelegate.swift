@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, TestProtocol {
+    func hoge() -> String {
+        return "Hogetest"
+    }
+    
+//これが起動処理で呼ばれる
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //キーボードが出るときににゅっとなるはず
+        IQKeyboardManager.shared.enable = true
+        
+        print(HogeTest(self).say())
+        
         return true
     }
 

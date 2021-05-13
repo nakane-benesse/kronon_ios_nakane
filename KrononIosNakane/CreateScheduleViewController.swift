@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
@@ -152,7 +153,9 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         inputStartTime.inputAccessoryView = toolbar
     }
     //pickerで指定した時間を、開始時間fieldに反映する
-    @objc func startTimePickerDone() {
+    @objc func startTimePickerDone(_ sender : UIBarButtonItem) {
+        //print(sender.noge)
+        
         inputStartTime.endEditing(true)
         // 日付のフォーマット
         let formatter = DateFormatter()
@@ -170,7 +173,7 @@ class CreateScheduleViewController: UIViewController , UITextFieldDelegate, UISc
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 35))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         //let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.timePickerDone(textField:)))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.endTimePickerDone))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.startTimePickerDone))
         toolbar.setItems([spacelItem, doneItem], animated: true)
         
         // インプットビュー設定(紐づいているUITextfieldへ代入)

@@ -250,8 +250,6 @@ class CalendarViewController: UIViewController, UICollectionViewDelegateFlowLayo
         }
     }
     
-    
-    
 }
 
 
